@@ -1,19 +1,19 @@
-# SENPI
+# senpi
 
-Raspberry Pi–powered Telegram channel monitor. Scrapes public channels, auto-translates non-Latin scripts locally, and pipes everything into a Matrix room.
+A Raspberry Pi–powered Telegram channel monitor. Scrapes public channels, auto-translates non-Latin scripts locally, and pipes everything into a Matrix room.
 
-No Telegram API keys. No cloud translation APIs. Everything runs on the Pi.
+No Telegram API keys. No cloud translation APIs. No more worrying about getting rate limited from Telegram. Nada!
 
 ---
 
 ## What it does
 
-Telegram's API has some annoying limitations — rate limits, phone number requirements, session management headaches. SENPI skips all of that by scraping the public web previews (`t.me/s/<channel>`) instead. New posts get forwarded to a private Matrix room, and if a message is in Arabic, Hebrew, Cyrillic, or CJK, it gets translated on-device using [Ollama](https://ollama.com) and sent as a threaded reply.
+Telegram's API has some annoying limitations — rate limits, phone number requirements, session management headaches. Your senpi skips all of that by scraping the public web previews (`t.me/s/<channel>`) instead. New posts get forwarded to a private Matrix room, and if a message is in Arabic, Hebrew, Cyrillic, or CJK, it gets translated on-device using [Ollama](https://ollama.com) and sent as a threaded reply.
 
 Images are grabbed during the scrape (before Telegram's CDN links expire) and uploaded to Matrix. Videos get a direct link back to the original post.
 
 ```
-  t.me/s/<channel>  ──(scrape)──▶  SENPI  ──(forward)──▶  Matrix Room
+  t.me/s/<channel>  ──(scrape)──▶  senpi  ──(forward)──▶  Matrix Room
                                      │
                                      ▼
                                   Ollama
@@ -27,7 +27,7 @@ Images are grabbed during the scrape (before Telegram's CDN links expire) and up
 - [Ollama](https://ollama.com) with a translation model pulled
 - A Matrix account and room
 
-That's it. No Telegram API credentials, no phone number, no session tokens.
+That's literally it. 
 
 ## Getting started
 
@@ -56,7 +56,7 @@ Run it:
 python main.py
 ```
 
-## Configuration
+## config
 
 Everything lives in `.env`:
 
@@ -89,4 +89,4 @@ Anything in a Latin alphabet (English, French, Spanish, transliterations) is lef
 
 ## Disclaimer
 
-SENPI scrapes publicly accessible Telegram channel previews for open-source intelligence research. No Telegram accounts or API keys are used. Comply with all applicable laws and platform terms of service.
+senpi scrapes publicly accessible Telegram channel previews for open-source intelligence research. PLEASE comply with all applicable laws.
