@@ -1,6 +1,6 @@
 # senpi
 
-A Raspberry Pi–powered Telegram channel monitor but theres a twist. Scrapes public channels, auto-translates non-Latin scripts locally, and pipes everything into a Matrix room.
+A Raspberry Pi–powered Telegram channel monitor but there's a twist. Scrapes public channels, auto-translates non-Latin scripts locally, and pipes everything into a Matrix room.
 
 No Telegram API keys. No cloud translation APIs. No more worrying about getting rate limited from Telegram. Nada!
 
