@@ -1,6 +1,6 @@
 # senpi
 
-A Raspberry Pi–powered Telegram channel monitor. Scrapes public channels, auto-translates non-Latin scripts locally, and pipes everything into a Matrix room.
+A Raspberry Pi–powered Telegram channel monitor but theres a twist. Scrapes public channels, auto-translates non-Latin scripts locally, and pipes everything into a Matrix room.
 
 No Telegram API keys. No cloud translation APIs. No more worrying about getting rate limited from Telegram. Nada!
 
@@ -87,6 +87,7 @@ Anything in a Latin alphabet (English, French, Spanish, transliterations) is lef
 
 [MIT](LICENSE)
 
-## Disclaimer
-
-senpi scrapes publicly accessible Telegram channel previews for open-source intelligence research. PLEASE comply with all applicable laws.
+## Note from dev
+1. PLEASE comply with all applicable laws. 
+2. You can download matrix on your phone to keep track of everything while on the go
+3. Lastly, I highly suggest you pick an Ollama model that isn't too demanding for your hardware. gemma3:1b (~1 GB) runs smooth on a Pi 4 with 4 GB RAM. If you've got more headroom, gemma3:4b or qwen2.5:3b will give you better translations.
