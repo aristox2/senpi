@@ -1,0 +1,8 @@
+# SENPI — Channel List
+# One Telegram handle per line (without the @).
+# Lines starting with # are ignored.
+
+# ── Example ───────────────────────────────────────────────
+# rnintel
+# SabrenNewss
+# idfofficial
