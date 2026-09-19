@@ -6,9 +6,9 @@ No Telegram API keys. No cloud translation APIs. No more worrying about getting 
 
 ---
 
-## What it does
+## what's senpi?
 
-Telegram's API has some annoying limitations — rate limits, phone number requirements, session management headaches. Your senpi skips all of that by scraping the public web previews (`t.me/s/<channel>`) instead. New posts get forwarded to a private Matrix room, and if a message is in Arabic, Hebrew, Cyrillic, or CJK, it gets translated on-device using [Ollama](https://ollama.com) and sent as a threaded reply.
+So telegram's API has some annoying limitations — rate limits, phone number requirements, session management headaches. Your senpi skips all of that by scraping the public web previews (`t.me/s/<channel>`) instead. New posts get forwarded to a private Matrix room, and if a message is in Arabic, Hebrew, Cyrillic, or CJK, it gets translated on-device using [Ollama](https://ollama.com) and sent as a threaded reply.
 
 Images are grabbed during the scrape (before Telegram's CDN links expire) and uploaded to Matrix. Videos get a direct link back to the original post.
 
@@ -20,7 +20,7 @@ Images are grabbed during the scrape (before Telegram's CDN links expire) and up
                               (local translation)
 ```
 
-## What you need
+## what you need
 
 - Raspberry Pi (or any Linux box — it's just Python)
 - Python 3.10+
@@ -29,7 +29,7 @@ Images are grabbed during the scrape (before Telegram's CDN links expire) and up
 
 That's literally it. 
 
-## Getting started
+## getting started
 
 ```bash
 git clone https://github.com/aristox2/SENPI.git
@@ -42,7 +42,7 @@ cp .env.example .env
 # Fill in your Matrix credentials
 ```
 
-Add the channels you want to watch to `channels.txt`, one handle per line:
+add the channels you want to watch to `channels.txt`, one handle per line:
 
 ```
 rnintel
@@ -50,7 +50,7 @@ SabrenNewss
 idfofficial
 ```
 
-Run it:
+run it:
 
 ```bash
 python main.py
@@ -70,14 +70,14 @@ Everything lives in `.env`:
 | `POLL_MIN` | Min seconds between scrapes | `8` |
 | `POLL_MAX` | Max seconds between scrapes | `15` |
 
-## Running as a service
+## running as a service
 
 ```bash
 sudo cp systemd/senpi.service /etc/systemd/system/
 sudo systemctl enable --now senpi.service
 ```
 
-## Translation coverage
+## translation coverage
 
 Arabic · Farsi · Hebrew · Russian · Ukrainian · Chinese · Japanese · Korean
 
